@@ -3,7 +3,7 @@ import numpy as np
 import streamlit as st
 import datetime
 from dateutil.relativedelta import relativedelta
-import numpy_financial as npf
+import _financial as npf
 import pytz
 from pandas.tseries.offsets import MonthEnd
 
