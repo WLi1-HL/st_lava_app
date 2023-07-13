@@ -14,7 +14,7 @@ with col_11:
     st.write('Test or actual?')
 with col_12:
     # Dropdown menu for test or actual
-    st.selectbox('', ('Test', 'Actual'), label_visibility='collapsed')
+    st.selectbox(label = 'Test or actual', options = ('Test', 'Actual'), label_visibility='collapsed')
 
 col_21, col_22 = st.columns(2)
 with col_21:
@@ -39,8 +39,8 @@ with col_41:
 with col_42:
     # analyst email
     st.selectbox(
-        '',
-        ('wenzheng.li@hl.com', 'xuezhu.yang@hl.com'),
+        label = 'Analyst email',
+        options = ('wenzheng.li@hl.com', 'xuezhu.yang@hl.com'),
         label_visibility='collapsed'
     )
 
@@ -50,8 +50,8 @@ with col_51:
 with col_52:
     # officer email
     st.selectbox(
-        '',
-        ('sai.uppuluri@hl.com', 'amacnamara@hl.com'),
+        label = 'Officer email',
+        options = ('sai.uppuluri@hl.com', 'amacnamara@hl.com'),
         label_visibility='collapsed'
     )
 
