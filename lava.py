@@ -13,8 +13,6 @@ from pandas.tseries.offsets import MonthEnd
 # session = snowauth_session()
 # st.markdown("## This (and below) is only seen after authentication")
 
-# make changes here
-
 st.title("LAVA App")
 
 col_11, col_12 = st.columns(2)
@@ -70,7 +68,7 @@ with col_52:
 
 # Upload file
 uploaded_file = st.file_uploader(
-    label = "Upload File", 
+    label = "Upload a file with Tape, InputVectors and InputInterestRates", 
     type = ["csv", "xlsx"], 
     key = "file_uploader",
     help = "Upload a file with Tape, InputVectors and InputInterestRates"
@@ -93,7 +91,7 @@ if uploaded_file is not None:
     # Temperarily focus on Monthly payment frequency only
     df_tape = df_tape[df_tape['Payment Frequncy'] == 'Monthly']
 
-    st.text('Tape: ')
+    st.text('Input Tape: ')
     st.write(df_tape)
 
     # Model Begins --------------------------------------------------------------------------------------------------------
@@ -217,6 +215,9 @@ if uploaded_file is not None:
 
 
     # Create Outputs --------------------------------------------------------------------------------------------------------
+    st.divider()
+    st.subheader('Outputs')
+    
     # Loan level output
     df_loan_output = pd.DataFrame(dict_all)
     st.text('Loan level output: ')
