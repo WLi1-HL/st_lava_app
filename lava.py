@@ -68,10 +68,10 @@ with col_52:
 
 # Upload file
 uploaded_file = st.file_uploader(
-    label = "Upload a file with Tape, InputVectors and InputInterestRates", 
+    label = "Upload a xlsx file with Tape, InputVectors and InputInterestRates", 
     type = ["csv", "xlsx"], 
     key = "file_uploader",
-    help = "Upload a file with Tape, InputVectors and InputInterestRates"
+    help = "LAVA_Test_v2.xlsx is a sample file for testing"
 )
 
 if uploaded_file is not None:
