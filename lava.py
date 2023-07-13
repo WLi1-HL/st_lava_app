@@ -47,8 +47,8 @@ with col_41:
 with col_42:
     # analyst email
     st.selectbox(
-        'Analyst email',
-        ('wenzheng.li@hl.com', 'xuezhu.yang@hl.com'),
+        label = 'Analyst email',
+        options = ('wenzheng.li@hl.com', 'xuezhu.yang@hl.com'),
         label_visibility='collapsed'
     )
 
@@ -58,8 +58,8 @@ with col_51:
 with col_52:
     # officer email
     st.selectbox(
-        'Officer email',
-        ('sai.uppuluri@hl.com', 'amacnamara@hl.com'),
+        label = 'Officer email',
+        options = ('sai.uppuluri@hl.com', 'amacnamara@hl.com'),
         label_visibility='collapsed'
     )
 
