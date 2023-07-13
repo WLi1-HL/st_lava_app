@@ -22,7 +22,11 @@ with col_11:
     st.write('Test or actual?')
 with col_12:
     # Dropdown menu for test or actual
-    st.selectbox('Test or actual', ('Test', 'Actual'), label_visibility='collapsed')
+    st.selectbox(
+        label = 'Test or actual', 
+        options = ('Test', 'Actual'), 
+        label_visibility='collapsed'
+    )
 
 col_21, col_22 = st.columns(2)
 with col_21:
