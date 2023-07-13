@@ -4,3 +4,4 @@ streamlit
 datetime
 python-dateutil
 pytz
+openpyxl
