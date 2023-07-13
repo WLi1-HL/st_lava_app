@@ -3,9 +3,17 @@ import numpy as np
 import streamlit as st
 import datetime
 from dateutil.relativedelta import relativedelta
-import numpy_financial as npf
+import _financial as npf
 import pytz
 from pandas.tseries.offsets import MonthEnd
+# from st_snowauth import snowauth_session
+# https://github.com/sfc-gh-bhess/st_snowauth/tree/main
+
+# st.markdown("## This (and above) is always seen")
+# session = snowauth_session()
+# st.markdown("## This (and below) is only seen after authentication")
+
+# make changes here
 
 st.title("LAVA App")
 
@@ -14,7 +22,7 @@ with col_11:
     st.write('Test or actual?')
 with col_12:
     # Dropdown menu for test or actual
-    st.selectbox('', ('Test', 'Actual'), label_visibility='collapsed')
+    st.selectbox('Test or actual', ('Test', 'Actual'), label_visibility='collapsed')
 
 col_21, col_22 = st.columns(2)
 with col_21:
@@ -39,7 +47,7 @@ with col_41:
 with col_42:
     # analyst email
     st.selectbox(
-        '',
+        'Analyst email',
         ('wenzheng.li@hl.com', 'xuezhu.yang@hl.com'),
         label_visibility='collapsed'
     )
@@ -50,7 +58,7 @@ with col_51:
 with col_52:
     # officer email
     st.selectbox(
-        '',
+        'Officer email',
         ('sai.uppuluri@hl.com', 'amacnamara@hl.com'),
         label_visibility='collapsed'
     )
