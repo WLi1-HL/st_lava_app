@@ -3,15 +3,13 @@ import numpy as np
 import streamlit as st
 import datetime
 from dateutil.relativedelta import relativedelta
-import _financial as npf
+import numpy_financial as npf
 import pytz
 from pandas.tseries.offsets import MonthEnd
+import time
 # from st_snowauth import snowauth_session
 # https://github.com/sfc-gh-bhess/st_snowauth/tree/main
 
-# st.markdown("## This (and above) is always seen")
-# session = snowauth_session()
-# st.markdown("## This (and below) is only seen after authentication")
 
 st.title("LAVA App")
 
@@ -75,6 +73,10 @@ uploaded_file = st.file_uploader(
 )
 
 if uploaded_file is not None:
+
+    # start time since reading data
+    start_time = time.time()
+
     data_state_text = st.empty()
     data_state_text.text('Reading data...')
     if uploaded_file.name.endswith("xlsx"):
@@ -164,7 +166,7 @@ if uploaded_file is not None:
             scheduled_principal = -npf.ppmt(row['Interest rate margin'] / 12, 1, end_period - current_period + 1, principal_balance)
 
             # calculate interest
-            if pd.isnull(benchmark):
+            if pd.isnull(benchmark) or benchmark == '0' or benchmark == 0:
                 interest_rate = row['Interest rate margin']
             else:
                 interest_rate = row['Interest rate margin'] + df_interest_rates.loc[current_period, benchmark]
@@ -259,5 +261,6 @@ if uploaded_file is not None:
         key = 'download_button_portfolio'
     )
     
-
-
+    # end time, total time taken
+    end_time = time.time()
+    st.text('Total time taken: ' + str(round(end_time - start_time, 2)) + ' seconds')

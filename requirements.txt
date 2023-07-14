@@ -5,3 +5,4 @@ datetime
 python-dateutil
 pytz
 openpyxl
+numpy-financial
